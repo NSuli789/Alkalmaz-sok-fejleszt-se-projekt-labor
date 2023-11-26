@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MEMO_Beadando_2023.MainPage">
+    
+    
+    <StackLayout>
+    <!--Fejléc kinézete-->
+    <!--FontFamilyt nem veszi be, valamint a BorderBrush-t nem értelmezi-->
+    <Frame Background="Black" Padding="5" CornerRadius="0">
+        <Label Text="MeMo" HorizontalTextAlignment="Center" TextColor="White" FontSize="30" FontFamily="Showcard Gothic" Padding="10">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF64E411" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+    </Frame>
+
+    <!--Időzítő kinézete-->
+    <Label x:Name="Timerlabel" Text="00:00" TextColor="Black" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" Background="Green" Padding="3"/>
+
+
+
+
+    <!--Játékos tér felosztása / területek-->
+    <Grid x:Name="GameGrid" Padding="10">
+
+        <!-- 7 db sor-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!--* = egységesen elosztja a magaságot-->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 4 db oszlop-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+
+        <!--Kártyák képeinek a beállításai-->
+        <Image Grid.Row="0" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+                <!--NumberOfTapsRequired: szükséges minimum érintés-->
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="0" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="0" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="0" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="0" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="1" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="2" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="2" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="2" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="2" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="3" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="3" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="3" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="3" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="4" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="4" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="4" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="4" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="5" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="5" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="5" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="5" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="6" Grid.Column="0" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="6" Grid.Column="1" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="6" Grid.Column="2" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Grid.Row="6" Grid.Column="3" Source="hatlap7.png" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Erintesfigyelo" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+
+
+
+
+    <!--Gombok felhelyezése-->
+    <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
+        <!--A gomb mérete kitölti a képernyőt alul-->
+        <Button Text="Új játék" Clicked="UjjatekClick" FontFamily="Showcard Gothic" FontAttributes="Bold" TextColor="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.162"/>
+                    <GradientStop  Color="#FF64E411" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button Text="Kilépés" Clicked="ExitClick" FontFamily="Showcard Gothic" FontAttributes="Bold" TextColor="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF64E411" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </StackLayout>
+
+
+
+
+</StackLayout>
+</ContentPage>
