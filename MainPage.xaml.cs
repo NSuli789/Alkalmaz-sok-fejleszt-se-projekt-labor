@@ -295,7 +295,7 @@ namespace MEMO_Beadando_2023
             if (kartyalista.All( ideiglenesvaltozo => ideiglenesvaltozo.Passzol))
             {
                 jatekfutas = false;
-                DisplayAlert("Győzelem!", "Megtaláltad az összes kártyát", "OK");
+                DisplayAlert("Győzelem!", "Megtaláltad az összes kártyát!", "OK");
             }
         }
 
